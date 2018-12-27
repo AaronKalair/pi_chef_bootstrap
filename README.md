@@ -9,7 +9,7 @@ Chef installation is based off of - https://github.com/facastagnini/raspberry-bi
 Usage
 =====
 1. Prepare the Pi by installing Raspbian and enabling SSH using raspi-config -
-https://www.raspberrypi.org/documentation/remote-access/ssh/
+https://www.raspberrypi.org/documentat\ion/remote-access/ssh/
 
 2. SSH in and create a /chef/ dir with the appropriate permissions
 
@@ -17,13 +17,13 @@ https://www.raspberrypi.org/documentation/remote-access/ssh/
 the IP address of the Pi to SCP the files onto
 
 4. Run `install_chef.sh` to setup the Pi for Chef'ing, this will
-a. Enable swap (Chef will run out of memory on any reasonably sized cookbook without this)
-b. Install Ruby 2.5.3 by building it from source (at the time of making this
+    1. Enable swap (Chef will run out of memory on any reasonably sized cookbook without this)
+    2. Install Ruby 2.5.3 by building it from source (at the time of making this
 a new enough version of Ruby to run Chef 14 wasn't available in apt)
-c. Install Chef as a ruby gem
+    3. Install Chef as a ruby gem
 
 5. Modify `bootstrap.json` to contain the correct run list
 
-6. Modify `client.rb` to contain the correct `cookbook\_path`
+6. Modify `client.rb` to contain the correct `cookbook_path`
 
 7. Run chef-client in local mode `sudo chef-client -z -j bootstrap.json -c client.rb`
